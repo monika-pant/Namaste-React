@@ -4,7 +4,9 @@
   "description": "namaste react course by akshay saini",
   "main": "App.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,15 @@
     "url": "https://github.com/monika-pant/Namaste-React/issues"
   },
   "homepage": "https://github.com/monika-pant/Namaste-React#readme",
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
-    "parcel": "^2.13.3"
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
