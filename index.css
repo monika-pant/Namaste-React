@@ -1,0 +1,25 @@
+.HeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid black;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  img {
+    width: 100%;
+  }
+}
+.NavItems {
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    li {
+      list-style-type: none;
+      margin: 4px;
+    }
+  }
+}
