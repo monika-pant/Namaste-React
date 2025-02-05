@@ -96,7 +96,7 @@ React Fundamentals
 
 \------------------------
 
-/****
+<!-- /****
  * Header
  *      - Logo
  *      - Nav items
@@ -109,7 +109,7 @@ React Fundamentals
  *      - Links
  *      - Address
  *      - Contact
- */
+ */-->
 
 Episode 4
 ---------
@@ -161,6 +161,8 @@ Best Practice: Organizing Code
 **Default import/export :** when we are exporting single thing from a file ex; in a component file
 - export default myData;
 - import myData from "my_file_path";
+
+
 **Named import/export :** when we have to export multiple things from a file
 we use named export
 - export const CDN_URL;
