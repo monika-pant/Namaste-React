@@ -96,6 +96,21 @@ React Fundamentals
 
 \------------------------
 
+/****
+ * Header
+ *      - Logo
+ *      - Nav items
+ * Body
+ *      - Search
+ *      - RestaurantContsiner
+ *      - RestaurantCard
+ * Footer
+ *      - copyright
+ *      - Links
+ *      - Address
+ *      - Contact
+ */
+
 Episode 4
 ---------
 
@@ -140,3 +155,13 @@ Best Practice: Organizing Code
 *   Within the src folder, code can be organized into subfolders based on functionality, such as components, containers, actions, and reducers.
     
 *   Following a consistent code organization pattern makes it easier for developers to navigate and maintain the codebase.
+
+**Type of export** :
+------------------------------
+**Default import/export :** when we are exporting single thing from a file ex; in a component file
+- export default myData;
+- import myData from "my_file_path";
+**Named import/export :** when we have to export multiple things from a file
+we use named export
+- export const CDN_URL;
+- import {CDN_URL}  from "my_file_path"; 
