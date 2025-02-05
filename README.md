@@ -1,5 +1,3 @@
-Here is the output in Markdown format:
-
 Namaste-React
 -------------
 
