@@ -167,3 +167,8 @@ Best Practice: Organizing Code
 we use named export
 - export const CDN_URL;
 - import {CDN_URL}  from "my_file_path"; 
+**React Hooks**
+------------------------
+A simple javascript variable
+- When evr a state variable is updated react rerenders the component, as soon as my data layer changes my UI layer is also changed as react rerenders it.
+**Reconciliation algorithm/React Fibre**

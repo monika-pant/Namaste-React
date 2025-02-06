@@ -71,7 +71,9 @@
   display: flex;
   align-items: center;
 }
-
+.filter-btn {
+  padding: 10px;
+}
 /* Footer Styles */
 .footer {
   border: 1px solid #000;
