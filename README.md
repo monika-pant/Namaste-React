@@ -167,8 +167,24 @@ Best Practice: Organizing Code
 we use named export
 - export const CDN_URL;
 - import {CDN_URL}  from "my_file_path"; 
+
 **React Hooks**
 ------------------------
-A simple javascript variable
+A simple javascript function given to us by react  which has it own usecase.
 - When evr a state variable is updated react rerenders the component, as soon as my data layer changes my UI layer is also changed as react rerenders it.
 **Reconciliation algorithm/React Fibre**
+An algo used by react to diff and rerender the UI in a faster and efficient manner.Came in react-16
+**Virtual DOM**
+Representation of an actual DOM, its an object and normal JS object
+finding out diff b/w two JS objects is faster as compared to HTML and hence it makes an obj representation of the actual DOM.
+**Diff Algorithm**
+Find outs the difference between old and new virtual DOM.
+
+**USE EFFECT**
+- A normal JS function given by react with some specific usecase, it takes two arguments
+- Callback function and a dependency array:
+useeffect(()=>{
+    console.log("useeffect called");
+},[])
+
+whenever u change the local state variable, reconciliation algo runs and  react rerenders the whole component.
