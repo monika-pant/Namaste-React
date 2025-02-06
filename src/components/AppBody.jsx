@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 const AppBody = () => {
   const [restaurantList, setRestaurantList] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant]= useState([]);
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
     fetchData();
@@ -18,6 +19,7 @@ const AppBody = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setRestaurantList(restaurantsData);
+    setFilteredRestaurant(restaurantsData);
   };
   function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -44,7 +46,7 @@ const AppBody = () => {
                //need to filter the data
             const data = filterData(searchText, restaurantList);
             console.log(data);
-                setRestaurantList(data);
+                setFilteredRestaurant(data);
               }}
             >
               Search
@@ -73,7 +75,7 @@ const AppBody = () => {
         </div>
         {/* <div className="search">Search</div> */}
         <div className="res-container">
-          {restaurantList.map((restaurant) => {
+          {filteredRestaurant.map((restaurant) => {
             return (
               // not using key(NA) << index as key << unique id from an API use as key,
               // as this will allow react to efficiently render the DOM tree
