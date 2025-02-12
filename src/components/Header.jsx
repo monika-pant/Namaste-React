@@ -7,10 +7,10 @@ const Header = () => {
 use effect is called on initial render and just once when the dependency array is empty array[]
 if we put something inside the dependency array is present , useffect is called every time the dependency changes
 **/
-  useEffect(()=>{
-    console.log("use effect called");
-  })
-  console.log(useState());
+  // useEffect(()=>{
+  //   console.log("use effect called");
+  // })
+  // console.log(useState());
   return (
     <>
       <div className="HeaderContainer">

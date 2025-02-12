@@ -204,3 +204,5 @@ whenever u change the local state variable, reconciliation algo runs and  react 
 - **There are 2 types of routing :**
 - Client side routing : HTML page is being served by the client, all routing configurations and routes are present in client side code.
 - Server side routing: HTML page served by server 
+- **Dynamic route and Load content inside it:**
+- **UseParam Hook:** used to read the params in react

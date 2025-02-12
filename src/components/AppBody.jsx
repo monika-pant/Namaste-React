@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import Error from "./Error";
+import { Link } from "react-router";
 const AppBody = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant]= useState([]);
@@ -51,7 +52,7 @@ const AppBody = () => {
               onClick={() => {
                //need to filter the data
             const data = filterData(searchText, restaurantList);
-            console.log(data);
+            // console.log(data);
                 setFilteredRestaurant(data);
               }}
             >
@@ -85,7 +86,9 @@ const AppBody = () => {
             return (
               // not using key(NA) << index as key << unique id from an API use as key,
               // as this will allow react to efficiently render the DOM tree
-              <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+              <Link to={"/restaurants/"+restaurant?.info?.id} key={restaurant?.info?.id}>
+              <RestaurantCard  resData={restaurant} />
+              </Link>
             );
           })}
         </div>
