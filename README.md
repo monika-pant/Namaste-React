@@ -186,5 +186,21 @@ Find outs the difference between old and new virtual DOM.
 useeffect(()=>{
     console.log("useeffect called");
 },[])
+- when there is no dependency array, useeffect is called every time the component renders
+- use effect is called on initial render and just once when the dependency array is empty array[]
+- if we put something inside the dependency array is present , useffect is called every time the dependency changes
+- used to call local state variable inside the functional component.
+- **never create state variables/hooks inside if/else block, for loop , or a function , react will mess up with the code.**
 
 whenever u change the local state variable, reconciliation algo runs and  react rerenders the whole component.
+
+**React Routing**
+- To introduce routing we need to form routing configuration
+- Routing configuration is done in index file.
+- react router dom gives a utility/hook for errors=> useRouteError().
+- In order to intact the header we need to have children routing
+- Never ever use an anchor tag while using react, it will refresh the whole page.
+- <link> component is the superpower given by react
+- **There are 2 types of routing :**
+- Client side routing : HTML page is being served by the client, all routing configurations and routes are present in client side code.
+- Server side routing: HTML page served by server 

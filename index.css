@@ -70,6 +70,7 @@
 .rating {
   display: flex;
   align-items: center;
+  gap: 4px;
 }
 .filter-btn {
   padding: 10px;

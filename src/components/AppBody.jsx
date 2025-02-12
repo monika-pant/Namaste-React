@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import Error from "./Error";
 const AppBody = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant]= useState([]);
@@ -10,16 +11,21 @@ const AppBody = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const API_URL =
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.317794453250343&lng=78.03602656428693&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-    const data = await fetch(API_URL);
-    const json = await data.json();
-    //use optional chaining as a safe code, such there we dont break application in case data is not available in nested object
-    const restaurantsData =
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setRestaurantList(restaurantsData);
-    setFilteredRestaurant(restaurantsData);
+    try{
+
+      const API_URL =
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.317794453250343&lng=78.03602656428693&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+      const data = await fetch(API_URL);
+      const json = await data.json();
+      //use optional chaining as a safe code, such there we dont break application in case data is not available in nested object
+      const restaurantsData =
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      setRestaurantList(restaurantsData);
+      setFilteredRestaurant(restaurantsData);
+    }catch(error){
+      console.log(error);
+    }
   };
   function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
