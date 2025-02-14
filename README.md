@@ -179,3 +179,8 @@ if we follow the below order to call the components
 React will give preference to the render phase and merge the rendering of child component
 this wil optimise the lifecycle
 -->
+
+## Optimising the code
+
+- Following SOLID principles, single responsibility principal: one component is responsible for only one thing.
+- **Hooks** utility functions provided by react

@@ -1,7 +1,9 @@
 import { CDN_URL } from "../utils/constants"; // syntax for named export
+import useOnlineStatus from "../utils/useOnlineStatus";
 const RestaurantCard = (props) => {
   const { resData } = props;
   const { cloudinaryImageId, avgRating, sla, cuisines, name } = resData?.info;
+
   return (
     <>
       <div className="res-card">

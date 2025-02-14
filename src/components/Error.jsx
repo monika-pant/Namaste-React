@@ -5,7 +5,7 @@ const Error = () => {
   console.log(err);
   return (
     <h2>
-      {err.error.message} <Link to="/">Click here</Link> to goto Home page
+      {err?.error?.message} <Link to="/">Click here</Link> to goto Home page
     </h2>
   );
 };
