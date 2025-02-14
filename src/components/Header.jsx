@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const [btnString, setBtnString] = useState("Login");
   /**when there is no dependency array, useeffect is called every time the compoennet renders
@@ -11,6 +12,8 @@ if we put something inside the dependency array is present , useffect is called 
   //   console.log("use effect called");
   // })
   // console.log(useState());
+  const onlineStatus = useOnlineStatus();
+
   return (
     <>
       <div className="HeaderContainer">
@@ -19,6 +22,7 @@ if we put something inside the dependency array is present , useffect is called 
         </div>
         <div className="NavItems">
           <ul>
+            <li>Online Status: {onlineStatus ? "✅" : "🔴"} </li>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -34,9 +38,9 @@ if we put something inside the dependency array is present , useffect is called 
             <li>
               <button
                 onClick={() => {
-                  btnString === "Login"
-                    ? setBtnString("Logout")
-                    : setBtnString("Logoin");
+                  btnString === "Log in"
+                    ? setBtnString("LogOut")
+                    : setBtnString("Log in");
                 }}
               >
                 {btnString}

@@ -2,7 +2,25 @@
 
 \====================
 
-## Package Configuration
+## Parcel
+
+- Dev Build
+- Local Sever
+- HMR
+- File Watching Algorithm
+- Caching- faster builds
+- Image Optimization
+- Minification
+- Bundling
+- Compress
+- Consistent HAshing
+- Code Splitting
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- HTTPs
+- Tree Shaking - remove unused code
+- Different dev and Prod bundles.
 
 \-------------------------
 
