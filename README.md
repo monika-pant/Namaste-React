@@ -79,6 +79,11 @@
 
 ## Episode 4
 
+## Compoennt
+
+- A component is a normal JS function returning JSX.
+- There are class based components and functional components.
+
 ## Props
 
 - Props (short for "properties") are arguments passed to a React component.
@@ -159,3 +164,18 @@ whenever u change the local state variable, reconciliation algo runs and react r
 - Server side routing: HTML page served by server
 - **Dynamic route and Load content inside it:**
 - **UseParam Hook:** used to read the params in react
+
+**Class BAsed components**
+
+- Whenever a class is instantiated a constructor is called\*\*
+- when a Class is loaded, the constructor is called.
+- **Never** ever compare react class component with functional compoennets
+<!--
+if we follow the below order to call the components
+<parent>
+<child prop1/>
+<child prop2/>
+<parent/>
+React will give preference to the render phase and merge the rendering of child component
+this wil optimise the lifecycle
+-->
