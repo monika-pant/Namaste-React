@@ -6,10 +6,13 @@ const RestaurantCard = (props) => {
 
   return (
     <>
-      <div className="res-card">
-        <img className="res-img" src={CDN_URL + cloudinaryImageId} />
-        <h3>{name}</h3>
-        <div className="rating">
+      <div className="flex flex-col bg-amber-50 flex-wrap hover:bg-amber-100 p-5 shadow-2xl max-w-70 rounded-2xl">
+        <img
+          className="w-70 h-70 rounded-2xl"
+          src={CDN_URL + cloudinaryImageId}
+        />
+        <h3 className="font-bold  text-lg">{name}</h3>
+        <div className=" flex gap-1 items-center flex-wrap">
           <svg
             width="20"
             height="20"

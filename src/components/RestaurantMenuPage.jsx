@@ -15,13 +15,16 @@ const RestaurantMenuPage = () => {
   if (itemCards === null) return <Shimmer />;
   return (
     <>
-      <div className="menu">
-        <h1>{resName}</h1>
-        <h2>menu</h2>
-        <ul>
+      <div className="p-5">
+        <h1 className="font-bold text-center">{resName}</h1>
+        <h2 className="font-bold capitalize text-center">menu</h2>
+        <ul className="list-none ">
           {itemCards?.map((item) => {
             return (
-              <li key={item?.card?.info?.id}>
+              <li
+                className="p-4 bg-amber-600 mt-10 hover:bg-amber-800 rounded-2xl text-amber-50"
+                key={item?.card?.info?.id}
+              >
                 {item?.card?.info?.name} - Rs{" "}
                 {item?.card?.info?.price / 100 ||
                   item?.card?.info?.defaultPrice / 100}

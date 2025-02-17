@@ -39,51 +39,54 @@ const AppBody = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="appBody">
+      <div className="p-10 m-auto">
         <div className="filter">
-          <div className="search">
-            <input
-              type="text"
-              value={searchText}
-              onChange={(e) => {
-                setSearchText(e.target.value);
-              }}
-            />
-            <button
-              onClick={() => {
-                //need to filter the data
-                const data = filterData(searchText, restaurantList);
-                // console.log(data);
-                setFilteredRestaurant(data);
-              }}
-            >
-              Search
-            </button>
+          <div className="m-4 p-4 flex gap-4 text-amber-50">
+            <div>
+              <input
+                type="text"
+                value={searchText}
+                className="border border-amber-700 p-2 text-amber-950"
+                onChange={(e) => {
+                  setSearchText(e.target.value);
+                }}
+              />
+              <button
+                className="bg-amber-600 p-2.5 rounded-r-lg hover:bg-amber-800 cursor-pointer"
+                onClick={() => {
+                  //need to filter the data
+                  const data = filterData(searchText, restaurantList);
+                  setFilteredRestaurant(data);
+                }}
+              >
+                Search
+              </button>
+            </div>
+            <div className="flex gap-4">
+              <button
+                className="bg-amber-600 p-2 rounded-[4px] hover:bg-amber-800 cursor-pointer"
+                onClick={() => {
+                  filteredRestaurantList = restaurantList.filter(
+                    (restaurant) => restaurant.info.avgRating > 4
+                  );
+                  setFilteredRestaurant(filteredRestaurantList);
+                }}
+              >
+                top Rated Restaurants
+              </button>
+              <button
+                className="bg-amber-600 p-2 rounded-[4px] hover:bg-amber-800 cursor-pointer"
+                onClick={() => {
+                  setFilteredRestaurant(restaurantList);
+                }}
+              >
+                Refresh List
+              </button>
+            </div>
           </div>
-          <button
-            className="filter-btn"
-            onClick={() => {
-              filteredRestaurantList = restaurantList.filter(
-                (restaurant) => restaurant.info.avgRating > 4
-              );
-              console.log("button clicked", restaurantList);
-              setRestaurantList(filteredRestaurantList);
-            }}
-          >
-            top Rated Restaurants
-          </button>
-        </div>
-        <div className="filter">
-          <button
-            onClick={() => {
-              setRestaurantList(resList);
-            }}
-          >
-            Refresh List
-          </button>
         </div>
         {/* <div className="search">Search</div> */}
-        <div className="res-container">
+        <div className="flex gap-5 flex-wrap">
           {filteredRestaurant.map((restaurant) => {
             return (
               // not using key(NA) << index as key << unique id from an API use as key,

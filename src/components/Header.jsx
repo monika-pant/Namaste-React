@@ -16,12 +16,12 @@ if we put something inside the dependency array is present , useffect is called 
 
   return (
     <>
-      <div className="HeaderContainer">
-        <div className="logo">
+      <div className="flex justify-between  bg-amber-800 shadow-amber-900 p-4 text-amber-100 shadow-2xl">
+        <div className="w-45">
           <img src={LOGO_URL}></img>
         </div>
-        <div className="NavItems">
-          <ul>
+        <div className="flex items-center">
+          <ul className="flex gap-4">
             <li>Online Status: {onlineStatus ? "✅" : "🔴"} </li>
             <li>
               <Link to="/">Home</Link>

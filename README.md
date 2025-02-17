@@ -202,3 +202,12 @@ this wil optimise the lifecycle
 
 - Following SOLID principles, single responsibility principal: one component is responsible for only one thing.
 - **Hooks** utility functions provided by react
+
+## Butifying the application | using CSS libraries
+
+**TAILWIND CSS**
+
+- CSS library
+- need to install the tailwind CSS using npm/npx
+- we can use various libraries like material UI that provides the ready made react components.
+- tailwind CSS used POSTCSS behind the scene, this is a tool that is used to transform CSS into javascript.
