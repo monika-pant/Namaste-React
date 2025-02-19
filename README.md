@@ -211,3 +211,9 @@ this wil optimise the lifecycle
 - need to install the tailwind CSS using npm/npx
 - we can use various libraries like material UI that provides the ready made react components.
 - tailwind CSS used POSTCSS behind the scene, this is a tool that is used to transform CSS into javascript.
+
+**HOC**
+
+- HOC are the components/function that takes a component as an argument and returns a component with some additions.
+- HOC does not alter the state of the component but it enhances the state of the component.
+- HOC returns a component and takes argument as a component

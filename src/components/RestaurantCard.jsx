@@ -66,4 +66,18 @@ const RestaurantCard = (props) => {
     </>
   );
 };
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    const { resData } = props;
+    return (
+      <div className="relative">
+        <RestaurantCard {...props} />
+        <label className="absolute bg-black text-white rounded-[10px] m-2 p-2 top-0">
+          {resData.info.aggregatedDiscountInfoV3.header +
+            resData.info.aggregatedDiscountInfoV3.subHeader}
+        </label>
+      </div>
+    );
+  };
+};
 export default RestaurantCard;

@@ -1,13 +1,15 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router";
+
 const AppBody = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const PromotedRestaurantComponent = withPromotedLabel(RestaurantCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -22,6 +24,7 @@ const AppBody = () => {
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
       setRestaurantList(restaurantsData);
+      // console.log("=====>>>", restaurantsData);
       setFilteredRestaurant(restaurantsData);
     } catch (error) {
       console.log(error);
@@ -95,7 +98,11 @@ const AppBody = () => {
                 to={"/restaurants/" + restaurant?.info?.id}
                 key={restaurant?.info?.id}
               >
-                <RestaurantCard resData={restaurant} />
+                {restaurant.info.aggregatedDiscountInfoV3 ? (
+                  <PromotedRestaurantComponent resData={restaurant} />
+                ) : (
+                  <RestaurantCard resData={restaurant} />
+                )}
               </Link>
             );
           })}
