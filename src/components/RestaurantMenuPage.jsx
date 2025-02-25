@@ -1,37 +1,42 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
-import { MENU_API } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantItems from "./RestaurantItems";
+import { useState } from "react";
 
 const RestaurantMenuPage = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
-  const resName = resInfo?.cards[0]?.card?.card?.text;
-  const itemCards =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
-      .itemCards;
-
-  if (itemCards === null) return <Shimmer />;
+  const restaurantName = resInfo?.cards[0]?.card?.card?.text;
+  const [showIndex, setShowIndex] = useState(0);
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (category) =>
+        category?.card?.card?.["@type"] ==
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  const toggleFunction = (index) => {
+    // if (showItemsData) {
+    // }
+    setShowIndex(index);
+  };
+  if (categories === null) return <Shimmer />;
   return (
     <>
       <div className="p-5">
-        <h1 className="font-bold text-center">{resName}</h1>
+        <h1 className="font-bold text-center">{restaurantName}</h1>
         <h2 className="font-bold capitalize text-center">menu</h2>
-        <ul className="list-none ">
-          {itemCards?.map((item) => {
-            return (
-              <li
-                className="p-4 bg-amber-600 mt-10 hover:bg-amber-800 rounded-2xl text-amber-50"
-                key={item?.card?.info?.id}
-              >
-                {item?.card?.info?.name} - Rs{" "}
-                {item?.card?.info?.price / 100 ||
-                  item?.card?.info?.defaultPrice / 100}
-              </li>
-            );
-          })}
-        </ul>
+        {categories?.map((category, index) => {
+          return (
+            //controlled component
+            <RestaurantItems
+              data={category}
+              key={category.card.card.categoryId}
+              showItemsData={index === showIndex ? true : false}
+              setShowIndex={() => toggleFunction(index)}
+            />
+          );
+        })}
       </div>
     </>
   );

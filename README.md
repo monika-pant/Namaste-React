@@ -217,3 +217,8 @@ this wil optimise the lifecycle
 - HOC are the components/function that takes a component as an argument and returns a component with some additions.
 - HOC does not alter the state of the component but it enhances the state of the component.
 - HOC returns a component and takes argument as a component
+
+**Lifting up the state**
+
+- Allow the parent component to have a power to control the child component.
+- **Controlled Component** when the state of a component is controlled by the other component and not the component itself

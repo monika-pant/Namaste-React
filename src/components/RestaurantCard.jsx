@@ -72,8 +72,9 @@ export const withPromotedLabel = (RestaurantCard) => {
     return (
       <div className="relative">
         <RestaurantCard {...props} />
-        <label className="absolute bg-black text-white rounded-[10px] m-2 p-2 top-0">
+        <label className="absolute bg-amber-600 text-white rounded-t-md w-full p-2 top-0 opa opacity-80 font-bold">
           {resData.info.aggregatedDiscountInfoV3.header +
+            " " +
             resData.info.aggregatedDiscountInfoV3.subHeader}
         </label>
       </div>
