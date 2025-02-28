@@ -221,4 +221,14 @@ this wil optimise the lifecycle
 **Lifting up the state**
 
 - Allow the parent component to have a power to control the child component.
-- **Controlled Component** when the state of a component is controlled by the other component and not the component itself
+- **Controlled Component** when the state of a component is controlled by the other component and not the component itself.
+- the term controlled and uncontrolled component is a philosophy itself , as there is no perfect definition.
+
+**React Context**
+
+- global place to access the data, helpful to avoid prop drilling(passing data to multiple nested component to reach it to the desired component).
+- The data that we need to serve globally in our application can be stored in a context then the context is used everywhere in the application.
+
+## REDUX
+
+- Huge data is stored in the redux store, we can call it as a DB for the

@@ -16,8 +16,9 @@ const RestaurantMenuPage = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
   const toggleFunction = (index) => {
-    // if (showItemsData) {
-    // }
+    /**
+     *  I want to modify my parent component, which is this component from my child component
+     * which is the  <RestaurantItems/> component */
     setShowIndex(index);
   };
   if (categories === null) return <Shimmer />;
@@ -28,7 +29,7 @@ const RestaurantMenuPage = () => {
         <h2 className="font-bold capitalize text-center">menu</h2>
         {categories?.map((category, index) => {
           return (
-            //controlled component
+            //controlled component because we are passing `showItemsData` to control the show hide state of the component
             <RestaurantItems
               data={category}
               key={category.card.card.categoryId}
