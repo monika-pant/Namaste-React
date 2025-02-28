@@ -6,7 +6,7 @@ const ItemData = ({ items }) => {
         const { id, name, description, imageId, price, defaultPrice } =
           item?.card?.info;
         return (
-          <div className="p-4 border-b-1 m-4 bg-grey" key={id}>
+          <div className="p-4 border-b-1 m-4 bg-grey " key={id}>
             <label className="font-bold">{name}</label>
             <div className="font-bold">₹ {(price || defaultPrice) / 100}</div>
             <div className="flex ">

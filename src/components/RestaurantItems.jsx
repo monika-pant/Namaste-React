@@ -7,7 +7,7 @@ const RestaurantItems = ({ data, showItemsData, setShowIndex }) => {
   }
   return (
     <>
-      <div className="m-auto shadow-xl mb-4">
+      <div className="m-auto shadow-xl mb-4 w-6/12 bg-amber-50">
         <div className="flex justify-between header" onClick={handleToggle}>
           <div className="mt-2 mb-2 p-2 font-bold">
             {data.card.card.title} ({data?.card?.card?.itemCards.length})
